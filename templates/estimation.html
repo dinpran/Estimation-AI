@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} Emissions {% endblock title %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/4.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+        background-size: cover;
+        background-position: center;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8); /* Add an overlay to make the form more readable */
+        padding: 50px;
+        border-radius: 20px;
+        margin: 50px auto;
+        max-width: 600px;
+    }
+    .form-label {
+        color: #333;
+        font-size: 18px;
+    }
+    .form-control {
+        font-size: 16px;
+        padding: 15px;
+    }
+    .btn-primary {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+</style>
+
+<div class="container">
+    <form method="POST" action="{% url 'predict_inputs' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="1st_input" class="form-label">Engine Size</label>
+            <input type="number" step="0.1" class="form-control" id="1st_input" name="1st_input" placeholder="Enter engine size">
+        </div>
+        <div class="mb-3">
+            <label for="2nd_input" class="form-label">Cylinders</label>
+            <input type="number" class="form-control" id="2nd_input" name="2nd_input" placeholder="Enter number of cylinders">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock body %}
+
+

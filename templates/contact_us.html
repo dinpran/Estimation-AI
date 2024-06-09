@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %} Contact Us {% endblock title %}
+{% block body %}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+    .contact-section {
+        padding: 100px 0;
+        text-align: center;
+    }
+    .contact-container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .contact-info {
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .contact-info h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .contact-info p {
+        font-size: 1.2em;
+        line-height: 1.8em;
+        color: #555;
+    }
+    .contact-links a {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 20px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+    .contact-links a:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="contact-section">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, please feel free to reach out to us:</p>
+            <p>Email: <a href="mailto:dindigalapraneeth@gmail.com">dindigalapraneeth@gmail.com</a></p>
+            <p>GitHub Repository: <a href="https://github.com/dinpran" target="_blank">https://github.com/dinpran</a></p>
+        </div>
+        <div class="contact-links">
+            <!-- Add any additional contact links/buttons here -->
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .card {
+            width: 100%;
+            max-width: 500px;
+        }
+        .btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card text-center shadow-sm">
+            <div class="card-header bg-primary text-white">
+                Predicted CO2 Emissions
+            </div>
+            <div class="card-body">
+                <h1 class="card-title display-4">{{ result }}</h1>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

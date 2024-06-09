@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %} About Us {% endblock title %}
+{% block body %}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+    .about-section {
+        background-image: url('/static/images/background.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        background-attachment: fixed;
+    }
+    .about-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+    .about-container {
+        position: relative;
+        z-index: 2;
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.8); /* Adding a subtle background to improve text visibility */
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .about-section h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+    .about-section p {
+        font-size: 1.2em;
+        line-height: 1.8em;
+        margin-bottom: 30px;
+        color: #555;
+    }
+    .highlight {
+        color: #ff9900; /* Highlight color */
+        font-weight: bold;
+    }
+</style>
+
+<div class="about-section">
+    <div class="about-overlay"></div>
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>Welcome to our platform, where we leverage the power of machine learning to provide accurate predictions and insightful overviews. Our mission is to harness the latest advancements in AI technology to deliver precise and reliable results.</p>
+        <p>We utilize our own trained machine learning models, ensuring that no third-party APIs are involved in the prediction process. This approach allows us to maintain the highest level of <span class="highlight">accuracy</span> and control over our data.</p>
+        <p>Our system is designed to handle a variety of inputs from users, making it versatile and adaptable to different needs. We strive to offer an intuitive user experience, making advanced AI accessible to everyone.</p>
+        <p>Thank you for choosing our platform. We are committed to continuously improving our models and services to better serve your needs.</p>
+    </div>
+</div>
+{% endblock body %}
+
+

@@ -1,0 +1,28 @@
+# cancer.html
+{% extends "base.html" %}
+{% block title %} Breast Cancer Diagnosis {% endblock title %}
+{% block body %} 
+<div class="container">
+    <form method="POST" action="{% url 'predict_cancer' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="1st_input" class="form-label">Radius Mean</label>
+            <input type="number" step="0.1" class="form-control" id="1st_input" name="1st_input" placeholder="Enter radius mean">
+        </div>
+        <div class="mb-3">
+            <label for="2nd_input" class="form-label">Texture Mean</label>
+            <input type="number" class="form-control" id="2nd_input" name="2nd_input" placeholder="Enter texture mean">
+        </div>
+        <div class="mb-3">
+            <label for="3rd_input" class="form-label">Perimeter Mean</label>
+            <input type="number" class="form-control" id="3rd_input" name="3rd_input" placeholder="Enter perimeter mean">
+        </div>
+        <div class="mb-3">
+            <label for="4th_input" class="form-label">Area Mean</label>
+            <input type="number" class="form-control" id="4th_input" name="4th_input" placeholder="Enter area mean">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %} Emissions {% endblock title %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/8.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif; /* Change the font family */
+        color: #333; /* Change the text color */
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8); /* Add an overlay to make the form more readable */
+        padding: 50px;
+        border-radius: 20px;
+        margin: 50px auto;
+        max-width: 600px;
+    }
+    .form-label {
+        font-size: 18px;
+    }
+    .form-control {
+        font-size: 16px;
+        padding: 15px;
+        margin-bottom: 20px; /* Add some spacing between input fields */
+        border: 1px solid #ccc; /* Add borders to input fields */
+        border-radius: 5px; /* Add border radius to input fields */
+    }
+    .btn-primary {
+        font-size: 18px;
+        padding: 15px 30px;
+        background-color: #007bff; /* Change the button background color */
+        border: none; /* Remove button border */
+        border-radius: 5px; /* Add border radius to button */
+        color: #fff; /* Change the button text color */
+    }
+</style>
+
+<div class="container">
+    <form method="POST" action="{% url 'predict_consumption' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="1st_input" class="form-label">Engine Size</label>
+            <input type="number" step="0.1" class="form-control" id="1st_input" name="1st_input" placeholder="Enter engine size">
+        </div>
+        <div class="mb-3">
+            <label for="2nd_input" class="form-label">Cylinders</label>
+            <input type="number" class="form-control" id="2nd_input" name="2nd_input" placeholder="Enter number of cylinders">
+        </div>
+        <div class="mb-3">
+            <label for="3nd_input" class="form-label">CO2 Emission</label>
+            <input type="number" class="form-control" id="3nd_input" name="3nd_input" placeholder="Enter CO2 emission of your car">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock body %}

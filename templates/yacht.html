@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %} Yacht Hydrodynamics {% endblock title %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/7.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif; /* Change the font family */
+        color: #333; /* Change the text color */
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8); /* Add an overlay to make the form more readable */
+        padding: 50px;
+        border-radius: 20px;
+        margin: 50px auto;
+        max-width: 600px;
+    }
+    .form-label {
+        font-size: 18px;
+    }
+    .form-control {
+        font-size: 16px;
+        padding: 15px;
+        margin-bottom: 20px; /* Add some spacing between input fields */
+        border: 1px solid #ccc; /* Add borders to input fields */
+        border-radius: 5px; /* Add border radius to input fields */
+    }
+    .btn-primary {
+        font-size: 18px;
+        padding: 15px 30px;
+        background-color: #007bff; /* Change the button background color */
+        border: none; /* Remove button border */
+        border-radius: 5px; /* Add border radius to button */
+        color: #fff; /* Change the button text color */
+    }
+</style>
+
+<div class="container">
+    <form method="POST" action="{% url 'predict_yacht' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="long_position" class="form-label">Long Position</label>
+            <input type="number" step="0.01" class="form-control" id="long_position" name="long_position" placeholder="Enter long position">
+        </div>
+        <div class="mb-3">
+            <label for="prismatic_coefficient" class="form-label">Prismatic Coefficient</label>
+            <input type="number" step="0.01" class="form-control" id="prismatic_coefficient" name="prismatic_coefficient" placeholder="Enter prismatic coefficient">
+        </div>
+        <div class="mb-3">
+            <label for="length_displacement_ratio" class="form-label">Length-Displacement Ratio</label>
+            <input type="number" step="0.01" class="form-control" id="length_displacement_ratio" name="length_displacement_ratio" placeholder="Enter length-displacement ratio">
+        </div>
+        <div class="mb-3">
+            <label for="bean_draught_ratio" class="form-label">Bean-Draught Ratio</label>
+            <input type="number" step="0.01" class="form-control" id="bean_draught_ratio" name="bean_draught_ratio" placeholder="Enter bean-draught ratio">
+        </div>
+        <div class="mb-3">
+            <label for="length_bean_ratio" class="form-label">Length-Bean Ratio</label>
+            <input type="number" step="0.01" class="form-control" id="length_bean_ratio" name="length_bean_ratio" placeholder="Enter length-bean ratio">
+        </div>
+        <div class="mb-3">
+            <label for="froude_number" class="form-label">Froude Number</label>
+            <input type="number" step="0.01" class="form-control" id="froude_number" name="froude_number" placeholder="Enter Froude number">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock body %}
+
+
