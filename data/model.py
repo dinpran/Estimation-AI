@@ -57,7 +57,7 @@ class BreastCancerModel:
         ssl._create_default_https_context = ssl._create_unverified_context
 
         # Load the data from local file
-        url = 'data/can.csv'  # Adjust the file path as per your directory structure
+        url = 'https://github.com/pycaret/pycaret/blob/master/datasets/cancer.csv'  # Adjust the file path as per your directory structure
 
         # Read the CSV file
         self.df = pd.read_csv(url)
@@ -69,8 +69,8 @@ class BreastCancerModel:
 
         # Train the logistic regression model
         self.log_reg = LogisticRegression(solver='liblinear')  # Set solver parameter
-        x_train = np.asanyarray(train[['radius_mean', 'texture_mean','perimeter_mean','area_mean']])
-        y_train = np.asanyarray(train[['diagnosis']])
+        x_train = np.asanyarray(train[['age', 'meno_pause','tumor-size','inv_nodes']])
+        y_train = np.asanyarray(train[['class']])
         self.log_reg.fit(x_train,y_train)
 
     def predict(self, radius_mean, texture_mean, perimeter_mean, area_mean):
